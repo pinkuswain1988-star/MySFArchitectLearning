@@ -1,0 +1,36 @@
+<template>
+    <div class="slds-box slds-m-around_x-small">
+        <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+
+            <div class="slds-col slds-size_8-of-12">
+                <p><strong>Name:</strong> {account.Name}</p>
+                <p><strong>Industry:</strong> {account.Industry}</p>
+
+                <template if:true={account.statusMessage}>
+                    <p class="slds-text-color_success slds-m-top_x-small">
+                        {account.statusMessage}
+                    </p>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_4-of-12 slds-text-align_right">
+                <template if:true={account.isLoading}>
+                    <lightning-spinner
+                        alternative-text="Creating order"
+                        size="small">
+                    </lightning-spinner>
+                </template>
+
+                <template if:false={account.isLoading}>
+                    <lightning-button
+                        label={account.buttonLabel}
+                        variant="brand"
+                        onclick={handleClick}
+                        disabled={account.isDisabled}>
+                    </lightning-button>
+                </template>
+            </div>
+
+        </div>
+    </div>
+</template>

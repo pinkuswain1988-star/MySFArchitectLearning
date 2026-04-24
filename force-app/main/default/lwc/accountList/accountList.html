@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Account List">
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="acc">
+                <c-account-row
+                    key={acc.Id}
+                    account={acc}
+                    oncreateorder={handleCreateOrder}>
+                </c-account-row>
+            </template>
+        </template>
+
+        <template if:true={errorMessage}>
+            <div class="slds-text-color_error slds-p-around_small">
+                {errorMessage}
+            </div>
+        </template>
+    </lightning-card>
+</template>
