@@ -1,6 +1,6 @@
 public with sharing class RecentAccountService {
 
-    // Fetch latest accounts
+    // Fetch recently created telecom accounts
     public static List<Account> getRecentAccounts(Integer limitSize) {
         return [
             SELECT Id, Name, Industry, CreatedDate
