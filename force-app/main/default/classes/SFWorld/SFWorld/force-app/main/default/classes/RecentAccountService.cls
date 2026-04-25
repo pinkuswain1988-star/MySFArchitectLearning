@@ -1,5 +1,5 @@
 public with sharing class RecentAccountService {
-
+  
     // Fetch recently created customer accounts for telecom use cases
     public static List<Account> getRecentAccounts(Integer limitSize) {
         return [
