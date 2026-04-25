@@ -1,13 +1,13 @@
 public with sharing class RecentAccountService {
-
-    // Fetch latest customer accounts
+  
+    // Fetch recently created customer accounts for telecom use cases
     public static List<Account> getRecentAccounts(Integer limitSize) {
         return [
             SELECT Id, Name, Industry, CreatedDate
             FROM Account
             WHERE Name != null
             ORDER BY CreatedDate DESC
-            LIMIT :limitSize
+            LIMIT :limitSizegit
         ];
     }
 
