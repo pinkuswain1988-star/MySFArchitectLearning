@@ -1,0 +1,17 @@
+<template>
+    <Lightning-card title="Eligibility Check">
+        <div class="slds-p-around_medium">
+            <Lightning-input label="Mobile Number" value={mobileNumber} onchange={handleChange}></Lightning-input>
+
+            </br>
+
+            <Lightning-button label="Check Eligibility" variant="brand" onclick={handleClick}></Lightning-button>
+
+            <template if:true={message}>
+                <p class="slds-m_top_medium">
+                    <b>Result: </b>{message}
+                </p>
+            </template>
+        </div>
+    </Lightning-card> 
+</template>
